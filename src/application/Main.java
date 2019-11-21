@@ -29,17 +29,19 @@ public class Main {
 				System.out.println();
 				System.out.print("Target: ");
 				ChessPosition target = UI.readChessPosition(sc);
-				ChessPiece capturePiece = chessMatch.performChessMove(source, target);
-				if(captured != null) {
-					captured.add(capturePiece);
+				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+				if (capturedPiece != null) {
+					captured.add(capturedPiece);
 				}
-			} catch (ChessException e) {
-				System.out.println(e.getMessage());
-				sc.nextLine();
-			}catch (InputMismatchException e) {
-				System.out.println(e.getMessage());
-				sc.nextLine();
 			}
+			 catch (ChessException e) {
+				System.out.println(e.getMessage());
+				sc.nextLine();
+			} catch (InputMismatchException e) {
+				System.out.println(e.getMessage());
+				sc.nextLine();
+
+		}
 		}
 	}
 }
